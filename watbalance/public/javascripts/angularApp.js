@@ -9,6 +9,11 @@ app.config([
 			url: '/home',
 			templateUrl: '/templates/home.html',
 			controller: 'HomeCtrl'
+		})
+		.state('balance', {
+			url: '/balance/{number}',
+			templateUrl: '/templates/balance.html',
+			controller: 'BalanceCtrl'
 		});
 
 		$urlRouterProvider.otherwise('home');
@@ -16,6 +21,19 @@ app.config([
 
 app.controller('HomeCtrl', [
 	'$scope',
+	'$location',
+	function($scope, $location) {
+		$scope.fetchBalance = function() {
+			// TODO sanitize?
+			$location.path('/balance/' + $scope.number);
+
+			$scope.number = '';
+			$scope.pin = '';
+		}
+	}]);
+
+app.controller('BalanceCtrl', [
+	'$scope',
 	function($scope) {
-		// home controller
+		// Balance controller
 	}]);
