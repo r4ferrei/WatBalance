@@ -1,4 +1,4 @@
 WatBalance
 ==========
 
-Expense tracking for the University of Waterloo's Watcard.
+Expense tracking for the University of Waterloo's WatCard.
